@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarav Raina | Computer Science & Finance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --text-color: white;
+            --accent-color: #ff007f;
+            --card-color: #2a2a2a;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 0, 127, 0.2);
+            border-color: var(--accent-color);
+        }
+        
+        .tag {
+            transition: background-color 0.2s ease;
+        }
+        
+        .tag:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            bottom: -8px;
+            left: 0;
+            background-color: var(--accent-color);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+        
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+        
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-500 {
+            animation-delay: 0.5s;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-black bg-opacity-90 z-50 shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-white hover:text-pink-500 transition-colors">
+                    Aarav Raina
+                </a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link text-white">About</a>
+                    <a href="#experience" class="nav-link text-white">Experience</a>
+                    <a href="#projects" class="nav-link text-white">Projects</a>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <a href="https://linkedin.com/in/aarav-raina" target="_blank" class="text-white hover:text-pink-500 transition-colors">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="https://github.com/aaravraina3" target="_blank" class="text-white hover:text-pink-500 transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#about" class="block py-2 text-white hover:text-pink-500">About</a>
+                <a href="#experience" class="block py-2 text-white hover:text-pink-500">Experience</a>
+                <a href="#projects" class="block py-2 text-white hover:text-pink-500">Projects</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="container mx-auto">
+            <div class="animate-fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                    Hi, I'm <span class="text-pink-500">Aarav</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl text-gray-300 mb-6">
+                    CS + Business Student & Algorithmic Trading Enthusiast
+                </h2>
+                <p class="text-lg text-gray-300 mb-8 max-w-2xl">
+                    Building intelligent systems at the intersection of finance and technology.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#projects" class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                        View Projects
+                    </a>
+                    <a href="mailto:raina.aa@northeastern.edu" class="border border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-gray-900">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-12 section-title animate-fade-in">About Me</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-2/3 animate-fade-in delay-100">
+                    <p class="text-lg mb-6">
+                        I'm a Computer Science & Business Administration student at Northeastern University with a passion for quantitative finance and algorithmic trading. Combining technical skills with financial theory, I'm building systems that analyze market data and identify opportunities.
+                    </p>
+                    <p class="text-lg mb-6">
+                        My background spans full-stack development, data analysis, and machine learning. I'm particularly interested in applying mathematical models and statistical analysis to financial markets. Currently exploring high-frequency trading strategies, market microstructure, and portfolio optimization.
+                    </p>
+                    <p class="text-lg">
+                        When I'm not coding, you'll find me teaching martial arts - a 13-year journey that taught me discipline, patience, and the value of continuous improvement.
+                    </p>
+                </div>
+                
+                <div class="md:w-1/3 animate-fade-in delay-200">
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700">
+                        <h3 class="text-xl font-bold mb-4 text-pink-500">Skills & Technologies</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-medium mb-2">Languages</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Python</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Java</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">SQL</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">C++</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">HTML/CSS</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-2">Frameworks & Libraries</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">React</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">FastAPI</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Flask</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Node.js</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Express.js</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-2">Data Science & ML</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">pandas</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">NumPy</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">scikit-learn</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">TensorFlow</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">matplotlib</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">seaborn</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-2">Tools & Platforms</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Git/GitHub</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Docker</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">AWS</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Redis</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Linux</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-2">Finance & Trading</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Algorithmic Trading</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Backtesting</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Technical Analysis</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Risk Management</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Portfolio Theory</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Financial Markets</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Trading Strategies</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Quantitative Analysis</span>
+                                    <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Financial Modeling</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-12 section-title animate-fade-in">Experience</h2>
+            
+            <div class="space-y-8">
+                <!-- Experience 1 -->
+                <div class="card bg-gray-800 p-6 rounded-xl border border-gray-700 animate-fade-in delay-100">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                        <h3 class="text-xl font-bold text-pink-500">Machine Learning Research Assistant</h3>
+                        <span class="text-gray-400">Jun 2025 - Present</span>
+                    </div>
+                    <h4 class="text-lg font-medium mb-4">Khoury College</h4>
+                    <ul class="list-disc pl-5 space-y-2 mb-6">
+                        <li>Investigating computational models for complex network analysis</li>
+                        <li>Developing Python applications processing 500GB+ of network data</li>
+                        <li>Reduced algorithm runtime from O(n³) to O(n²) achieving 40% improvement</li>
+                        <li>Building distributed systems handling 1000+ API requests per minute</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Algorithms</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Big Data</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Distributed Systems</span>
+                    </div>
+                </div>
+                
+                <!-- Experience 2 -->
+                <div class="card bg-gray-800 p-6 rounded-xl border border-gray-700 animate-fade-in delay-200">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                        <h3 class="text-xl font-bold text-pink-500">Software Engineering Intern</h3>
+                        <span class="text-gray-400">Jun - Aug 2024</span>
+                    </div>
+                    <h4 class="text-lg font-medium mb-4">GetFeedz Inc.</h4>
+                    <ul class="list-disc pl-5 space-y-2 mb-6">
+                        <li>Developed responsive React components reducing page load time by 35%</li>
+                        <li>Debugged state management issues decreasing crash rate from 12% to 3%</li>
+                        <li>Achieved 85% test coverage using Jest</li>
+                        <li>Collaborated in Agile environment using Jira</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">React</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Jest</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Agile</span>
+                    </div>
+                </div>
+                
+                <!-- Experience 3 -->
+                <div class="card bg-gray-800 p-6 rounded-xl border border-gray-700 animate-fade-in delay-300">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                        <h3 class="text-xl font-bold text-pink-500">Data Analysis Research Assistant</h3>
+                        <span class="text-gray-400">May - Jul 2024</span>
+                    </div>
+                    <h4 class="text-lg font-medium mb-4">International Hellenic University</h4>
+                    <ul class="list-disc pl-5 space-y-2 mb-6">
+                        <li>Designed algorithms processing 1M+ healthcare records in under 30 seconds</li>
+                        <li>Reduced query latency by 10x through database optimization</li>
+                        <li>Built automation tools with 99.5% reliability</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">SQL</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Data Analysis</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Optimization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 bg-gray-900">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-12 section-title animate-fade-in">Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="card bg-gray-800 p-6 rounded-xl border border-gray-700 animate-fade-in delay-100">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-pink-500">Jarvis - Full-Stack Personal Assistant</h3>
+                        <span class="text-gray-400">2025</span>
+                    </div>
+                    <p class="mb-6">
+                        Building microservices with FastAPI handling 200+ RPS. Real-time features using WebSockets with 50ms latency. Integrated multiple APIs including weather and calendar.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">FastAPI</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">React</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Redis</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Docker</span>
+                    </div>
+                    <a href="https://github.com/aaravraina3" class="text-pink-500 hover:text-pink-400 flex items-center">
+                        <i class="fab fa-github mr-2"></i> View on GitHub
+                    </a>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="card bg-gray-800 p-6 rounded-xl border border-gray-700 animate-fade-in delay-200">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-pink-500">Stock Trading Analysis Platform</h3>
+                        <span class="text-gray-400">2024</span>
+                    </div>
+                    <p class="mb-6">
+                        Built automated trading system with Python for analyzing stock patterns and executing trades. Implemented popular indicators like moving averages and RSI for buy/sell signals. Backtested strategies on historical data with paper trading simulation. Features real-time price tracking and performance dashboards.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Python</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">pandas</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">NumPy</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">yfinance</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Flask</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Plotly</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Redis</span>
+                    </div>
+                    <a href="https://github.com/aaravraina3" class="text-pink-500 hover:text-pink-400 flex items-center">
+                        <i class="fab fa-github mr-2"></i> View on GitHub
+                    </a>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="card bg-gray-800 p-6 rounded-xl border border-gray-700 animate-fade-in delay-300">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-pink-500">NutriCycle - Environmental Tracking Platform</h3>
+                        <span class="text-gray-400">2024</span>
+                    </div>
+                    <p class="mb-6">
+                        Cloud-based tracker deployed on Render with 99% uptime. RESTful API handling 100+ daily calls. Responsive UI with vanilla JavaScript.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">Flask</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">SQLite</span>
+                        <span class="tag bg-gray-700 px-3 py-1 rounded-full text-sm">CI/CD</span>
+                    </div>
+                    <div class="space-y-2">
+                        <a href="https://nutricycle.onrender.com" target="_blank" class="text-pink-500 hover:text-pink-400 flex items-center">
+                            <i class="fas fa-external-link-alt mr-2"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/aaravraina3/NutriCycle" target="_blank" class="text-pink-500 hover:text-pink-400 flex items-center">
+                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-black py-12 px-6">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-white hover:text-pink-500 transition-colors">
+                        Aarav Raina
+                    </a>
+                    <p class="text-gray-400 mt-2">Building the future of finance with technology.</p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-6 mb-4">
+                        <a href="https://linkedin.com/in/aarav-raina" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="https://github.com/aaravraina3" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="mailto:raina.aa@northeastern.edu" class="text-gray-400 hover:text-pink-500 transition-colors">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-500 text-sm">© 2025 All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
